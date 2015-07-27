@@ -1,0 +1,27 @@
+application: coe-dbms-10
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /bootstrap
+  static_dir: bootstrap
+
+- url: /stylesheets
+  static_dir: stylesheets
+  mime_type: text/css
+
+- url: /.*
+  script: coe-dbms-10.application
+
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest

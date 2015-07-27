@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Information</title>
+    <link type="text/css" rel="stylesheet" href="/bootstrap/main.css" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+
+    <style type="text/css">
+      body {
+        background-image:  url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRZsQj-CiOn3Zm1rxdis3A1QSETp8q0_dexiCiSSVhO0nxRWdNQ);
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+
+      }
+      table{
+        border: 2px solid white;
+      }
+      </style>
+ <div id='cssmenu'>
+        <ul>
+            <li><a href="/"><span>Home</span></a></li>
+            <li class='active has-sub'><a href='#'><span>Student</span></a>
+                <ul>
+                    <li class='has-sub'><a href="/student/create"><span>Create New</span></a></li>
+                    <li class='has-sub'><a href="/student/list"><span>View All</span></a></li>
+                </ul>
+            </li>
+            
+        </ul>
+    </div>
+    <center>
+        <h1><strong>Student Information</strong></h1>
+    <br>
+    
+    {% for record in student_list %}
+    {% if record.key.id()==id %}
+    <table border="2px solid white"width="80%">
+        <tr>
+          
+            <td width="25%" style="text-align:center;"><h3 class="design">Name</h3></td>
+            <td width="7%" style="text-align:center;"><h3 class="design">Age</h3></td>
+            <td width="20%" style="text-align:center;"><h3 class="design">Student Number</h3></td>
+            <td width="20%" style="text-align:center;"><h3 class="design">Email</h3></td>
+            <td width="15%"  style="text-align:center; color:white;"><h3 class="design">Remarks</h3></td>
+           
+        </tr>
+        <tr>
+            <td style="text-align:center;"><p class="design2">{{record.first_name}}
+        {{record.last_name}}</p></td>
+        
+            <td style="text-align:center;"><p class="design2">{{record.age}}</p></td>
+            <td style="text-align:center;"><p class="design2">{{record.student_number}}</p></td>
+            <td style="text-align:center;"><p class="design2">{{record.email}}</p></td>
+            <td style="text-align:center;">
+                <h2><a href="/student/edit/{{record.key.id()}}" class="btn btn-success btn-sm" role="button">EDIT PROFILE</a></h2>
+                <h2><a href="/student/delete/{{record.key.id()}}" class="btn btn-warning btn-sm" role="button">DELETE PROFILE</a></h2>
+            </td>
+        </tr>
+    </table>
+        
+      <h2><a href="/student/list" class="btn btn-primary btn-md" role="button">GO BACK TO STUDENT LIST</a></h2>
+    
+    </center>
+    
+    
+
+    {% endif %}          
+    {% endfor %}
+
+</body>
+</html>
+

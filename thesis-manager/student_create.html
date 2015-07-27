@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>Student New</title>
+    <link type="text/css" rel="stylesheet" href="/bootstrap/main.css" />
+</head>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<body>
+   <style type="text/css">
+      body {
+        background-image:  url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRZsQj-CiOn3Zm1rxdis3A1QSETp8q0_dexiCiSSVhO0nxRWdNQ);
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+
+      }
+      table{
+        border: 2px solid white;
+      }
+    </style>
+    
+    <div id='cssmenu'>
+        <ul>
+            <li><a href="/"><span>Home</span></a></li>
+            <li class='active has-sub'><a href='#'><span>Student</span></a>
+                <ul>
+                    <li class='has-sub'><a href="/student/create"><span>Create New</span></a></li>
+                    <li class='has-sub'><a href="/student/list"><span>View All</span></a></li>
+                </ul>
+            </li>
+         
+        </ul>
+    </div>
+    <div>
+    <body>
+    <h1><strong>Create Student Account</strong></h1>
+    <form method="POST" action="/student/create" >
+    </div>
+    <table width="80%" cellpadding="3" border="2" solid white" align="center">
+        <tr>
+            <td width="20%" style="text-align:center; padding:5px; color:white;"><label>First Name</label></td>
+            <td width="20%" style="text-align:center; padding:5px; color:white;"><label>Last Name</label></td>
+            <td width="10%" style="text-align:center; padding:5px; color:white;"><label>Age</label></td>
+            <td width="25%" style="text-align:center; padding:5px; color:white;"><label>Email</label></td>
+            <td width="25"  style="text-align:center; padding:5px; color:white;"><label>Student Number</label></td>
+        </tr>
+        <tr>
+            <td><input type="text" name="first_name" class="input" placeholder="Fist Name" style="width:100%;"></td>
+            <td><input type="text" name="last_name" class="input" placeholder="Last Name" style="width:100%;"></td>
+            <td><input type="text" name="age" class="input" placeholder="Age" style="width:100%;"></td>
+            <td><input type="email" name="email" class="input" placeholder="Email Address" style="width:100%;"></td>
+            <td><input type="text" name="student_number" class="input" placeholder="Student Number" style="width:100%;"></td>
+        </tr>
+    </table>
+    <center>
+    
+    <input type="submit" value="Create Account" size="40" style="padding: 10px; margin-top: 10px;">
+     
+    </center>
+    </form>
+</body>
+</html>
